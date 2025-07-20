@@ -23,7 +23,7 @@ export async function ask(question: string, userId: string): Promise<string> {
     }
 
     const data = await response.json() as AskResponse;
-    return data.response || '❌ Не удалось получить ответ от сервера';
+    return data.answer || '❌ Не удалось получить ответ от сервера';
   } catch (error) {
     logger.error('❌ An error occurred while requesting the server:', error);
     return '❌ Извините, сервер временно недоступен. Попробуйте позже.';

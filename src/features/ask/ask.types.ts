@@ -5,5 +5,5 @@ export interface AskRequest {
 }
 
 export interface AskResponse { 
-  response: string;
+  answer: string;
 }

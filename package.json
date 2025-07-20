@@ -1,0 +1,35 @@
+{
+  "name": "mcbuddy-bot",
+  "version": "1.0.0",
+  "description": "🤖 Telegram-бот для общения с MCBuddy — спрашивай о Майнкрафте и мгновенно получай понятные, точные ответы! 📱",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "bun run src/index.ts",
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun",
+    "test": "bun test"
+  },
+  "keywords": [
+    "minecraft",
+    "ai",
+    "assistant",
+    "telegram",
+    "bot",
+    "bun"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/node-telegram-bot-api": "^0.64.0",
+    "node-telegram-bot-api": "^0.64.0",
+    "tslog": "^4.9.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,25 +1,19 @@
 import TelegramBot from 'node-telegram-bot-api';
-import { logger } from '../shared/logging';
 import { ask } from '../features/ask/ask.service';
-import { 
-  getWelcomeMessage, 
-  helpMessage, 
-  noQuestionMessage, 
-  questionProcessingError, 
-  messageProcessingError 
-} from './messages';
+import { logger } from '../shared/logging';
+import { getWelcomeMessage, helpMessage, messageProcessingError, noQuestionMessage, questionProcessingError, sendMessage } from './messages';
 
 export const start = (bot: TelegramBot) => (msg: TelegramBot.Message) => {
   const chatId = msg.chat.id;
   const userName = msg.from?.first_name || 'Друг';
-  
-  bot.sendMessage(chatId, getWelcomeMessage(userName));
+
+  sendMessage(bot, chatId, getWelcomeMessage(userName));
 };
 
 export const help = (bot: TelegramBot) => (msg: TelegramBot.Message) => {
   const chatId = msg.chat.id;
-  
-  bot.sendMessage(chatId, helpMessage);
+
+  sendMessage(bot, chatId, helpMessage);
 };
 
 export const askCommand = (bot: TelegramBot) => async (msg: TelegramBot.Message, match: RegExpExecArray | null) => {
@@ -28,7 +22,7 @@ export const askCommand = (bot: TelegramBot) => async (msg: TelegramBot.Message,
   const question = match?.[1];
 
   if (!question) {
-    bot.sendMessage(chatId, noQuestionMessage);
+    sendMessage(bot, chatId, noQuestionMessage);
     return;
   }
 
@@ -36,10 +30,10 @@ export const askCommand = (bot: TelegramBot) => async (msg: TelegramBot.Message,
 
   try {
     const answer = await ask(question, userId);
-    bot.sendMessage(chatId, answer);
+    sendMessage(bot, chatId, answer);
   } catch (error) {
     logger.error('❌ An error occurred while processing the question:', error);
-    bot.sendMessage(chatId, questionProcessingError);
+    sendMessage(bot, chatId, questionProcessingError);
   }
 };
 
@@ -60,9 +54,9 @@ export const message = (bot: TelegramBot) => async (msg: TelegramBot.Message) =>
 
   try {
     const answer = await ask(question, userId);
-    bot.sendMessage(chatId, answer);
+    sendMessage(bot, chatId, answer);
   } catch (error) {
     logger.error('❌ An error occurred while processing the message:', error);
-    bot.sendMessage(chatId, messageProcessingError);
+    sendMessage(bot, chatId, messageProcessingError);
   }
 };

@@ -1,3 +1,6 @@
+import TelegramBot from "node-telegram-bot-api";
+import convert from "telegramify-markdown";
+
 export const getWelcomeMessage = (userName: string) => `🤖 Привет, ${userName}! Добро пожаловать в **MCBuddy**!
 
 Я — твой персональный AI-ассистент для **Minecraft**! 🎮
@@ -27,3 +30,6 @@ export const helpMessage = `🆘 Помощь по командам **MCBuddy**:
 export const noQuestionMessage = '❓ Пожалуйста, задайте вопрос после команды `/ask`';
 export const questionProcessingError = '❌ Произошла ошибка при обработке вашего вопроса. Попробуйте позже.';
 export const messageProcessingError = '❌ Произошла ошибка при обработке вашего сообщения. Попробуйте позже.'; 
+
+export const sendMessage = (bot: TelegramBot, chatId: number, message: string) => 
+  bot.sendMessage(chatId, convert(message, 'keep'), { parse_mode: 'MarkdownV2' });

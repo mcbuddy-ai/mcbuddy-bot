@@ -1,0 +1,54 @@
+---
+alwaysApply: true
+---
+
+# MCBuddy Bot - Project Overview 🤖
+
+## Project Information
+- **Full Name**: MCBuddy Bot
+- **Short Name**: mcbuddy-bot
+- **Description**: Telegram-бот для общения с MCBuddy — спрашивай о Майнкрафте и мгновенно получай понятные, точные ответы! 📱
+
+## Technical Specifications
+- **TypeScript Version**: 5.0+
+- **Runtime**: Bun 1.0+
+- **Main File**: src/index.ts
+- **Architecture**: Modular TypeScript application with feature-based structure
+
+## Technology Stack
+- **Language**: TypeScript
+- **Runtime**: Bun.js
+- **Telegram API**: node-telegram-bot-api
+- **Logging**: tslog (structured logging)
+- **Markdown Processing**: telegramify-markdown
+- **Containerization**: Docker, docker-compose
+
+## Core Features
+- **Command /ask** — задавай вопросы о Minecraft и получай AI-ответы с учётом контекста
+- **Direct Messages** — общение с ботом без команд, просто писать сообщения
+- **Visual Feedback** — индикатор "печатает" во время обработки запроса
+- **Russian Interface** — все сообщения и ответы на русском языке
+
+## Integrations
+- **MCBuddy Server API** — взаимодействие с бэкендом для получения AI-ответов
+- **OpenRouter** — поддержка использования собственного токена через X-OpenRouter-Token
+- **Telegram Bot API** — полная интеграция с Telegram
+
+## Core Modules
+- **application**: Application initialization and configuration
+- **features/ask**: Question processing and interaction with MCBuddy Server
+- **telegram**: Telegram Bot API logic and message handling
+- **shared**: Common utilities (error handling, logging)
+
+## Key Entry Points
+- **Main File**: [src/index.ts](mdc:src/index.ts)
+- **Entry Point**: [src/application/entrypoint.ts](mdc:src/application/entrypoint.ts)
+- **Telegram Handler**: [src/telegram/handler.ts](mdc:src/telegram/handler.ts)
+- **Ask Service**: [src/features/ask/ask.service.ts](mdc:src/features/ask/ask.service.ts)
+
+## Architectural Principles
+- **Pattern**: Feature-based modular architecture
+- **Structure**: Organized by features and shared utilities
+- **Type Safety**: Strong TypeScript typing throughout
+- **Logging**: Structured logging with tslog
+- **Error Handling**: Centralized error handling with user-friendly messages

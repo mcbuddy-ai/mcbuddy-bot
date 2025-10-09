@@ -1,0 +1,47 @@
+---
+alwaysApply: true
+---
+
+# MCBuddy Bot - Project Structure 📁
+
+## Root Structure
+
+### Main Files
+- **Entry Point**: [src/index.ts](mdc:src/index.ts) – Main application entry point
+- **Configuration**: [package.json](mdc:package.json), [tsconfig.json](mdc:tsconfig.json) – Project configuration
+- **Docker**: [Dockerfile](mdc:Dockerfile), [docker-compose.yml](mdc:docker-compose.yml) – Containerization
+
+### Sources/ Modules
+
+#### application/ (`src/application/`)
+- **Purpose**: Application initialization and configuration
+- **Key Files**:
+  - [entrypoint.ts](mdc:src/application/entrypoint.ts) – Application entry point and bot initialization
+  - [entrypoint.env.ts](mdc:src/application/entrypoint.env.ts) – Environment variables configuration
+
+#### features/ask/ (`src/features/ask/`)
+- **Purpose**: Question processing and interaction with MCBuddy Server
+- **Key Files**:
+  - [ask.service.ts](mdc:src/features/ask/ask.service.ts) – Service for sending questions to MCBuddy Server
+  - [ask.types.ts](mdc:src/features/ask/ask.types.ts) – Type definitions for ask feature
+  - [ask.env.ts](mdc:src/features/ask/ask.env.ts) – Environment variables for ask feature
+
+#### telegram/ (`src/telegram/`)
+- **Purpose**: Telegram Bot API logic and message handling
+- **Key Files**:
+  - [handler.ts](mdc:src/telegram/handler.ts) – Main message and command handler
+  - [handler.types.ts](mdc:src/telegram/handler.types.ts) – Type definitions for handlers
+  - [messages.ts](mdc:src/telegram/messages.ts) – Bot messages and text constants
+
+#### shared/ (`src/shared/`)
+- **Purpose**: Common utilities and shared logic
+- **Key Files**:
+  - [error.ts](mdc:src/shared/error.ts) – Error handling utilities
+  - [logging.ts](mdc:src/shared/logging.ts) – Logging configuration and utilities
+
+## Architectural Principles of the Structure
+- **Modularity**: Feature-based organization for clear separation of concerns
+- **Type Safety**: TypeScript used throughout for compile-time safety
+- **Environment Configuration**: Dedicated .env.ts files for environment variables
+- **Error Handling**: Centralized error handling with user-friendly messages
+- **Logging**: Structured logging with tslog for debugging and monitoring

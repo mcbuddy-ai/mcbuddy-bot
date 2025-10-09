@@ -1,13 +1,13 @@
+---
+networks:
+  default:
+    driver: bridge
 services:
   bot:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: mcbuddy_bot
-    restart: unless-stopped
-    networks: [ default ]
     env_file: .env
-
-networks:
-  default:
-    driver: bridge 
+    networks: [ default ]
+    restart: unless-stopped

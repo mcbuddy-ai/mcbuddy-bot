@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/bun": "latest",
     "@types/node": "^20.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@types/node-telegram-bot-api": "^0.64.0",
@@ -31,6 +31,6 @@
     "tslog": "^4.9.3"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.9.3"
   }
 }

@@ -58,5 +58,3 @@ scripts/
 **/*.test.ts
 **/*.spec.ts
 **/tsconfig.json
-**/bun.lock
-**/package-lock.json

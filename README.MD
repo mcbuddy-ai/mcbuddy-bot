@@ -1,9 +1,10 @@
 # 🤖 McBuddy Bot
 
 [![AI Capable](https://img.shields.io/badge/AI-Capable-brightgreen?style=flat&logo=openai&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot)
-[![Docker](https://img.shields.io/badge/Docker-Available-2496ED?style=flat&logo=docker&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot)
-[![Bun](https://img.shields.io/badge/Bun-1.0+-000000?style=flat&logo=bun&logoColor=white)](https://bun.sh/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![GitHub Release](https://img.shields.io/github/v/release/mcbuddy-ai/mcbuddy-bot?style=flat&logo=github&color=blue)](https://github.com/mcbuddy-ai/mcbuddy-bot/releases)
+[![Docker](https://img.shields.io/badge/Docker-Available-2496ED?style=flat&logo=docker&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot/pkgs/container/mcbuddy-bot)
+[![Bun](https://img.shields.io/badge/Bun-1.2.18-000000?style=flat&logo=bun&logoColor=white)](https://bun.sh/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 **Язык**: 🇷🇺 Русский | [🇺🇸 English](README.EN.md) | [🇨🇳 中文](README.CN.md)
 
@@ -92,6 +93,30 @@ docker compose up -d
 docker compose logs -f mcbuddy-bot
 ```
 
+### Docker Compose с готовым образом
+
+Если хотите использовать готовый образ:
+
+1. Задекларируйте сервис mcbuddy-bot в `docker-compose.yml`:
+
+```yaml
+services:
+  mcbuddy-bot:
+    image: ghcr.io/mcbuddy-ai/mcbuddy-bot:1.3.0
+    env_file: .env
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      MCBUDDY_SERVER_URL: ${MCBUDDY_SERVER_URL}
+      X_OPENROUTER_TOKEN: ${X_OPENROUTER_TOKEN}
+```
+
+> **Примечание**: Вам потребуется передать все переменные окружения из файла `.env` или любым другим удобным способом.
+
+2. Запустите сервисы:
+```bash
+docker compose up -d
+```
+
 ### Bare Metal
 
 Требования:
@@ -165,7 +190,7 @@ AI-инструменты использовались точечно для г�
 
 ---
 
-![image](./media.jpg)
+![image](./media.png)
 
 🇷🇺 **Сделано в России с любовью.** ❤️
 

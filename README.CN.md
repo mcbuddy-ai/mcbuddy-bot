@@ -1,9 +1,10 @@
 # 🤖 McBuddy Bot
 
 [![AI Capable](https://img.shields.io/badge/AI-Capable-brightgreen?style=flat&logo=openai&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot)
-[![Docker](https://img.shields.io/badge/Docker-Available-2496ED?style=flat&logo=docker&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot)
-[![Bun](https://img.shields.io/badge/Bun-1.0+-000000?style=flat&logo=bun&logoColor=white)](https://bun.sh/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![GitHub Release](https://img.shields.io/github/v/release/mcbuddy-ai/mcbuddy-bot?style=flat&logo=github&color=blue)](https://github.com/mcbuddy-ai/mcbuddy-bot/releases)
+[![Docker](https://img.shields.io/badge/Docker-Available-2496ED?style=flat&logo=docker&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot/pkgs/container/mcbuddy-bot)
+[![Bun](https://img.shields.io/badge/Bun-1.2.18-000000?style=flat&logo=bun&logoColor=white)](https://bun.sh/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178C6?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
 **语言**: [🇷🇺 Русский](README.md) | [🇺🇸 English](README.EN.md) | 🇨🇳 中文
 
@@ -92,6 +93,30 @@ docker compose up -d
 docker compose logs -f mcbuddy-bot
 ```
 
+### 使用预构建镜像的 Docker Compose
+
+如果您想使用预构建镜像：
+
+1. 在 `docker-compose.yml` 中声明 mcbuddy-bot 服务：
+
+```yaml
+services:
+  mcbuddy-bot:
+    image: ghcr.io/mcbuddy-ai/mcbuddy-bot:1.3.0
+    env_file: .env
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      MCBUDDY_SERVER_URL: ${MCBUDDY_SERVER_URL}
+      X_OPENROUTER_TOKEN: ${X_OPENROUTER_TOKEN}
+```
+
+> **注意**：您需要从 `.env` 文件或其他任何方便的方式提供所有环境变量。
+
+2. 启动服务：
+```bash
+docker compose up -d
+```
+
 ### 裸机部署
 
 要求：
@@ -165,7 +190,7 @@ AI 工具被选择性地用于生成部分文档。主要架构、命令处理�
 
 ---
 
-![image](./media.jpg)
+![image](./media.png)
 
 🇷🇺 **在俄罗斯用爱制作。** ❤️
 

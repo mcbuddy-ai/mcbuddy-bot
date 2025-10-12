@@ -1,0 +1,24 @@
+---
+networks:
+  default:
+services:
+  mcbuddy-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mcbuddy-bot
+    cpus: '0.5'
+    env_file: .env
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      TZ: ${TZ}
+    logging:
+      driver: json-file
+      options:
+        max-file: '3'
+        max-size: 10m
+    mem_limit: 256m
+    mem_reservation: 128m
+    networks: [ default ]
+    restart: unless-stopped
+

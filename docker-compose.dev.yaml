@@ -1,7 +1,6 @@
 ---
 networks:
   default:
-    driver: bridge
 services:
   mcbuddy-bot:
     build:
@@ -24,4 +23,3 @@ services:
     networks: [ default ]
     restart: unless-stopped
     security_opt: [ "seccomp:unconfined" ]
-

@@ -1,0 +1,42 @@
+{
+  "name": "mcbuddy-bot-dev",
+  "dockerComposeFile": [
+    "../docker-compose.dev.yaml"
+  ],
+  "service": "mcbuddy-bot",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/docker-from-docker:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "ms-azuretools.vscode-docker",
+        "editorconfig.editorconfig",
+        "oven.bun-vscode"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": true
+        },
+        "files.eol": "\n",
+        "typescript.tsdk": "node_modules/typescript/lib"
+      }
+    }
+  },
+  "postCreateCommand": "bun install",
+  "postStartCommand": "bun --version",
+  "runServices": [
+    "mcbuddy-bot"
+  ],
+  "shutdownAction": "stopCompose"
+}
+

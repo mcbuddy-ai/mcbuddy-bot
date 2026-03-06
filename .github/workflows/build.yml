@@ -116,7 +116,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
       - name: Build MCBuddy Bot image (PR check)
         if: needs.changes.outputs.bot == 'true'
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: Dockerfile
@@ -160,7 +160,7 @@ jobs:
             type=ref,event=branch
 
       - name: Build & Push (mcbuddy-bot)
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@v7
         with:
           context: .
           file: Dockerfile

@@ -1,5 +1,7 @@
 # 🤖 McBuddy Bot
 
+> **No longer maintained.** MCBuddy lives on in [mcbuddy-spigot](https://github.com/mcbuddy-ai/mcbuddy-spigot) and [mcbuddy-server](https://github.com/mcbuddy-ai/mcbuddy-server); the Telegram bot is retired and this repository is archived.
+
 [![AI Capable](https://img.shields.io/badge/AI-Capable-brightgreen?style=flat&logo=openai&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot)
 [![GitHub Release](https://img.shields.io/github/v/release/mcbuddy-ai/mcbuddy-bot?style=flat&logo=github&color=blue)](https://github.com/mcbuddy-ai/mcbuddy-bot/releases)
 [![Docker](https://img.shields.io/badge/Docker-Available-2496ED?style=flat&logo=docker&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot/pkgs/container/mcbuddy-bot)

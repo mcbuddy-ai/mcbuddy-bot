@@ -1,5 +1,7 @@
 # 🤖 McBuddy Bot
 
+> **本项目已停止维护。** MCBuddy 继续在 [mcbuddy-spigot](https://github.com/mcbuddy-ai/mcbuddy-spigot) 和 [mcbuddy-server](https://github.com/mcbuddy-ai/mcbuddy-server) 中发展；Telegram 机器人已停用，本仓库已归档。
+
 [![AI Capable](https://img.shields.io/badge/AI-Capable-brightgreen?style=flat&logo=openai&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot)
 [![GitHub Release](https://img.shields.io/github/v/release/mcbuddy-ai/mcbuddy-bot?style=flat&logo=github&color=blue)](https://github.com/mcbuddy-ai/mcbuddy-bot/releases)
 [![Docker](https://img.shields.io/badge/Docker-Available-2496ED?style=flat&logo=docker&logoColor=white)](https://github.com/mcbuddy-ai/mcbuddy-bot/pkgs/container/mcbuddy-bot)
